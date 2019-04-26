@@ -13,6 +13,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputMovieId();
 		}
 		return result;
@@ -24,6 +25,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputMovieSchedule();
 		}
 		return result;
@@ -35,6 +37,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputTicketNum();
 		}
 		return result;
@@ -46,6 +49,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputIsContinue();
 		}
 		return result;
@@ -58,6 +62,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputPoint();
 		}
 		return result;
@@ -69,6 +74,7 @@ public class InputView {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("잘못된 입력입니다.");
+			scanner.next();
 			inputCreditOrCash();
 		}
 		return result;

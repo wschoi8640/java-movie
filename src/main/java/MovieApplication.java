@@ -39,6 +39,7 @@ public class MovieApplication {
     	int movieId = InputView.inputMovieId();
     	if(!ValidChecker.isValidMovieId(movieId)) {
     		chooseMovie();
+    		return;
     	}
 		List<PlaySchedule> schedules = null;
         for(Movie movie : model.getMovies()) {
@@ -55,6 +56,7 @@ public class MovieApplication {
     	int scheduleNum = InputView.inputMovieSchedule();
     	if(!ValidChecker.isValidSchedule(scheduleNum)) {
     		chooseSchedule();
+    		return;
     	}
     	PlaySchedule schedule = model.getSchedules().get(scheduleNum - 1);
     	model.setSchedule(schedule);
@@ -64,6 +66,7 @@ public class MovieApplication {
     	int ticketNum = InputView.inputTicketNum();
     	if(!ValidChecker.isValidTicketNum(ticketNum)) {
     		chooseTicketNum();
+    		return;
     	}
     	model.setTicketNum(ticketNum);
     }
@@ -78,6 +81,7 @@ public class MovieApplication {
     	 isContinue = InputView.inputIsContinue();
     	 if(!ValidChecker.isValidIsContinue(isContinue)) {
     		 chooseContinue();
+     		return;
     	 }
     	 List<Ticket> cart = model.getCart();
     	 OutputView.printTicketsAtCart(cart);
@@ -87,6 +91,7 @@ public class MovieApplication {
 		int point = InputView.inputPoint();
 		if(!ValidChecker.isValidPoint(point)) {
 			choosePoint();
+    		return;
 		}
 		model.setPoint(point);
 	}
@@ -95,6 +100,7 @@ public class MovieApplication {
 		int creditOrCash = InputView.inputCreditOrCash();
 		if(!ValidChecker.isValidCreditOrCash(creditOrCash)) {
 			chooseCreditOrCash();
+    		return;
 		}
 		model.setCreditOrCash(creditOrCash);
 	}
@@ -111,6 +117,7 @@ public class MovieApplication {
 			total = (int)(total * 0.98);
 		}
 		total = total - model.getPoint();
+		if(total <= 0) total = 0;
 		OutputView.printTotalPrice(total);
 	}
 }
