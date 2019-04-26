@@ -64,6 +64,15 @@ public class Model {
 
 	public void addTicketsToCart() {
 		getCart().add(ticket);
+		for(int i = 0; i < movies.size(); i++) {
+			if(movies.get(i).getId() == ticket.getId()) {
+				for(int j = 0; j < movies.get(i).getPlaySchedules().size(); j++) {
+					if(movies.get(i).getPlaySchedules().get(j) == ticket.getSchedule()) {
+						movies.get(i).getPlaySchedules().get(j).modifyCapacity(ticket.getTicketNum());
+					}
+				}
+			}
+		}
 	}
 
 	public List<Ticket> getCart() {

@@ -15,11 +15,10 @@ public class MovieApplication {
     public static void main(String[] args) {
         model = new Model();
     	List<Movie> movies = MovieRepository.getMovies();
-        OutputView.printMovies(movies);
         model.setMovies(movies);
         
-        
         while(isContinue == 2) {
+            OutputView.printMovies(model.getMovies());
         	chooseMovie();
         	chooseSchedule();
         	chooseTicketNum();
@@ -37,7 +36,6 @@ public class MovieApplication {
     	int movieId = InputView.inputMovieId();
 		List<PlaySchedule> schedules = null;
         for(Movie movie : model.getMovies()) {
-        	System.out.println(movie.getId());
         	if(movie.getId() == movieId){
         		model.setMovie(movie);
         		schedules = movie.getPlaySchedules();
