@@ -3,6 +3,7 @@ import domain.Movie;
 import domain.MovieRepository;
 import domain.PlaySchedule;
 import domain.Ticket;
+import domain.ValidChecker;
 import view.InputView;
 import view.OutputView;
 
@@ -10,10 +11,12 @@ import java.util.List;
 
 public class MovieApplication {
 	static Model model;
+	static ValidChecker validChecker;
     static int isContinue = 2;
 
     public static void main(String[] args) {
         model = new Model();
+        validChecker = new ValidChecker(model);
     	List<Movie> movies = MovieRepository.getMovies();
         model.setMovies(movies);
         
@@ -34,6 +37,9 @@ public class MovieApplication {
 
 	private static void chooseMovie() {
     	int movieId = InputView.inputMovieId();
+    	if(!ValidChecker.isValidMovieId(movieId)) {
+    		chooseMovie();
+    	}
 		List<PlaySchedule> schedules = null;
         for(Movie movie : model.getMovies()) {
         	if(movie.getId() == movieId){
@@ -47,12 +53,18 @@ public class MovieApplication {
 
     private static void chooseSchedule() {
     	int scheduleNum = InputView.inputMovieSchedule();
+    	if(!ValidChecker.isValidSchedule(scheduleNum)) {
+    		chooseSchedule();
+    	}
     	PlaySchedule schedule = model.getSchedules().get(scheduleNum - 1);
     	model.setSchedule(schedule);
 	}
     
     private static void chooseTicketNum() {
     	int ticketNum = InputView.inputTicketNum();
+    	if(!ValidChecker.isValidTicketNum(ticketNum)) {
+    		chooseTicketNum();
+    	}
     	model.setTicketNum(ticketNum);
     }
 
