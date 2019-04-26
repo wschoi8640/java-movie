@@ -14,7 +14,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputMovieId();
 		}
@@ -26,7 +26,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputMovieSchedule();
 		}
@@ -38,7 +38,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputTicketNum();
 		}
@@ -50,7 +50,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputIsContinue();
 		}
@@ -63,7 +63,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputPoint();
 		}
@@ -75,7 +75,7 @@ public class InputView {
 		try {
 			result = scanner.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다.");
+			System.out.println(Msgs.InputTypeErr.getMsg());
 			scanner.next();
 			inputCreditOrCash();
 		}

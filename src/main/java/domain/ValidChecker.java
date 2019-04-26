@@ -21,25 +21,25 @@ public class ValidChecker {
 				isValid = true;
 			}
 		}
-		if(!isValid) System.out.println("일치하는 영화가 없습니다.");
+		if(!isValid) System.out.println(Msgs.NoMatchMovieErr.getMsg());
 		return isValid;
 	}
 
 	public static boolean isValidSchedule(int scheduleNum) {
 		List<PlaySchedule> schedules = model.getSchedules();
 		if(schedules.size() < scheduleNum || scheduleNum <= 0) {
-			System.out.println("해당 시간대가 존재하지 않습니다.");
+			System.out.println(Msgs.ScheduleNotExistErr.getMsg());
 			return false;
 		}
 		PlaySchedule schedule = schedules.get(scheduleNum - 1);
 		if(schedule.getCapacity() == 0) {
-			System.out.println("남는 자리가 업습니다.");
+			System.out.println(Msgs.NoSeatAvailErr.getMsg());
 			return false;
 		}
 		List<Ticket> cart = model.getCart();
 		for(Ticket ticket : cart) {
 			if(!DateTimeUtils.isOneHourWithinRange(ticket.getSchedule().getStartDateTime(), schedule.getStartDateTime())) {
-				System.out.println("일행과 1시간 이상 차이납니다.");
+				System.out.println(Msgs.GroupTimeErr.getMsg());
 				return false;
 			}
 		}
@@ -49,7 +49,7 @@ public class ValidChecker {
 	public static boolean isValidTicketNum(int ticketNum) {
 		isValid = true;
 		if(ticketNum > model.getSchedule().getCapacity()) {
-			System.out.println("자리가 부족합니다.");
+			System.out.println(Msgs.NotEnoughSeatErr.getMsg());
 			isValid = false;
 		}
 		if(ticketNum <= 0) {
