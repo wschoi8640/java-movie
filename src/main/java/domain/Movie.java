@@ -19,16 +19,33 @@ public class Movie {
     }
 
     void addPlaySchedule(PlaySchedule playSchedule) {
-        playSchedules.add(playSchedule);
+        getPlaySchedules().add(playSchedule);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (PlaySchedule playSchedule : playSchedules) {
+        for (PlaySchedule playSchedule : getPlaySchedules()) {
             sb.append(playSchedule);
         }
-        return id + " - " + name + ", " + price + "원" + NEW_LINE
+        return getId() + " - " + getName() + ", " + getPrice() + "원" + NEW_LINE
                 + sb.toString();
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public List<PlaySchedule> getPlaySchedules() {
+		return playSchedules;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+    
 }
