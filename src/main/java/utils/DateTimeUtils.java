@@ -2,7 +2,12 @@ package utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
+/**
+ * 시간 간격을 측정하는 메소드를 가진 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class DateTimeUtils {
     public static final String PLAYING_TIME_FORMAT = "yyyy-MM-dd HH:mm";
     public static final int ONE_HOURS = 1;

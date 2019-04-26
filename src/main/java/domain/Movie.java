@@ -2,7 +2,12 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 영화와 관련된 정보,메소드를 가진 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class Movie {
     private static final char NEW_LINE = '\n';
 
@@ -19,16 +24,33 @@ public class Movie {
     }
 
     void addPlaySchedule(PlaySchedule playSchedule) {
-        playSchedules.add(playSchedule);
+        getPlaySchedules().add(playSchedule);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (PlaySchedule playSchedule : playSchedules) {
+        for (PlaySchedule playSchedule : getPlaySchedules()) {
             sb.append(playSchedule);
         }
-        return id + " - " + name + ", " + price + "원" + NEW_LINE
+        return getId() + " - " + getName() + ", " + getPrice() + "원" + NEW_LINE
                 + sb.toString();
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public List<PlaySchedule> getPlaySchedules() {
+		return playSchedules;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+    
 }
