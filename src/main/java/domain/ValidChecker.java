@@ -52,4 +52,28 @@ public class ValidChecker {
 		}
 		return isValid;
 	}
+
+	public static boolean isValidIsContinue(int isContinue) {
+		isValid = false;
+		if(isContinue == 1 || isContinue == 2) {
+			isValid = true;
+		}
+		return isValid;
+	}
+
+	public static boolean isValidPoint(int point) {
+		isValid = true;
+		if(point < 0) {
+			isValid = false;
+		}
+		return isValid;
+	}
+
+	public static boolean isValidCreditOrCash(int creditOrCash) {
+		isValid = false;
+		if(creditOrCash == 1 || creditOrCash == 2) {
+			isValid = true;
+		}
+		return isValid;
+	}
 }

@@ -76,17 +76,26 @@ public class MovieApplication {
     
     private static void chooseContinue() {
     	 isContinue = InputView.inputIsContinue();
+    	 if(!ValidChecker.isValidIsContinue(isContinue)) {
+    		 chooseContinue();
+    	 }
     	 List<Ticket> cart = model.getCart();
     	 OutputView.printTicketsAtCart(cart);
     }
     
 	private static void choosePoint() {
 		int point = InputView.inputPoint();
+		if(!ValidChecker.isValidPoint(point)) {
+			choosePoint();
+		}
 		model.setPoint(point);
 	}
 
 	private static void chooseCreditOrCash() {
 		int creditOrCash = InputView.inputCreditOrCash();
+		if(!ValidChecker.isValidCreditOrCash(creditOrCash)) {
+			chooseCreditOrCash();
+		}
 		model.setCreditOrCash(creditOrCash);
 	}
 	
