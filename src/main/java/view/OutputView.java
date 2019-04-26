@@ -1,6 +1,7 @@
 package view;
 
 import domain.Movie;
+import domain.Msgs;
 import domain.PlaySchedule;
 import domain.Ticket;
 
@@ -26,7 +27,7 @@ public class OutputView {
 	}
 
 	public static void printTotalPrice(int total) {
-		System.out.println("최종 결제한 금액은" + total + "원입니다.");
-		System.out.println("예매를 완료했습니다. 즐거운 영화 관람되세요.");
+		System.out.print(Msgs.PrintTotalPrice_0.getMsg() + total);
+		System.out.println(Msgs.PrintTotalPrice_1.getMsg());
 	}
 }
