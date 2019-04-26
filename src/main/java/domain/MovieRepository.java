@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static utils.DateTimeUtils.createDateTime;
-
+/**
+ * 영화 종류별 정보를 저장하는 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class MovieRepository {
     private static List<Movie> movies = new ArrayList<>();
 

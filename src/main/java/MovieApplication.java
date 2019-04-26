@@ -8,7 +8,12 @@ import view.InputView;
 import view.OutputView;
 
 import java.util.List;
-
+/**
+ * 영화 예매 프로그램이 진행되는 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class MovieApplication {
 	static Model model;
 	static ValidChecker validChecker;

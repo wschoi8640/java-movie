@@ -3,7 +3,12 @@ package domain;
 import java.util.List;
 
 import utils.DateTimeUtils;
-
+/**
+ * 입력값의 유효성을 검사하는 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class ValidChecker {
 
 	static Model model;

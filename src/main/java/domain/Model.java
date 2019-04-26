@@ -2,7 +2,12 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 데이터를 저장하는 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class Model {
 	 private Movie movie;
 	 private PlaySchedule schedule;

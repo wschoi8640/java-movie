@@ -1,5 +1,10 @@
 package domain;
-
+/**
+ * 사용자가 선택한 영화와 관련된 정보, 메소드를 가진 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class Ticket {
     private static final char NEW_LINE = '\n';
 

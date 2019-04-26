@@ -6,7 +6,12 @@ import domain.PlaySchedule;
 import domain.Ticket;
 
 import java.util.List;
-
+/**
+ * 출력하는 메소드들을 가진 클래스
+ * 
+ * @author wschoi8640
+ * @version 1.0
+ */
 public class OutputView {
     public static void printMovies(List<Movie> movies) {
         for (Movie movie : movies) {
