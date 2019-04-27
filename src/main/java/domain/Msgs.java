@@ -29,7 +29,11 @@ public enum Msgs {
 	Msgs(String msg){
 		this.msg = msg;
 	}
-	
+	/**
+	 * 해당 메세지를 반환하는 메소드
+	 * 
+	 * @return 선택된 메시지
+	 */
 	public String getMsg(){
 		return msg; 
 	}
